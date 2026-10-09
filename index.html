@@ -1,0 +1,257 @@
+DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdom of PeaceLand</title>
+  <style>
+    :root {
+      --green: #123b2c;
+      --gold: #d8b56d;
+      --cream: #f8f5eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: #24352c;
+      line-height: 1.8;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    header h1 {
+      color: var(--gold);
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 15px;
+      background: #fff;
+    }
+
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 7px 12px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 65px 20px;
+      background: linear-gradient(135deg, #123b2c, #246448);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      color: var(--gold);
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #183326;
+      padding: 10px 20px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin: 22px 0;
+      border-radius: 12px;
+      border: 1px solid #e8dfc9;
+    }
+
+    h2, h3 { color: var(--green); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 15px;
+    }
+
+    .city {
+      padding: 18px;
+      background: #f5f3e9;
+      border-right: 4px solid var(--gold);
+      border-radius: 8px;
+    }
+
+    label { display: block; margin-top: 12px; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font: inherit;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--green);
+      color: white;
+      padding: 25px;
+      margin-top: 35px;
+    }
+
+    .notice {
+      background: #fff8df;
+      padding: 12px;
+      border-radius: 7px;
+    }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>👑 Kingdom of PeaceLand</h1>
+    <p id="royalSubtitle">المملكة الرمزية للسلام والازدهار</p>
+    <button class="button" onclick="setLanguage('ar')">العربية</button>
+    <button class="button" onclick="setLanguage('en')">English</button>
+  </header>
+
+  <nav>
+    <a href="#about" data-ar="عن المملكة" data-en="About">عن المملكة</a>
+    <a href="#king" data-ar="الملك" data-en="The King">الملك</a>
+    <a href="#cities" data-ar="المدن" data-en="Cities">المدن</a>
+    <a href="#citizenship" data-ar="طلب الجنسية" data-en="Citizenship">طلب الجنسية</a>
+  </nav>
+
+  <div class="hero">
+    <h2 data-ar="أهلاً بكم في مملكة السلام" data-en="Welcome to the Kingdom of Peace">أهلاً بكم في مملكة السلام</h2>
+    <p data-ar="وطن رمزي يجمع السلام والعدل والمعرفة والتعاون." data-en="A symbolic kingdom built on peace, justice, knowledge and cooperation.">
+      وطن رمزي يجمع السلام والعدل والمعرفة والتعاون.
+    </p>
+    <a class="button" href="#cities" data-ar="اكتشف المملكة" data-en="Explore the Kingdom">اكتشف المملكة</a>
+    <a class="button" href="#citizenship" data-ar="طلب الجنسية الرمزية" data-en="Apply for Symbolic Citizenship">طلب الجنسية الرمزية</a>
+  </div>
+
+  <main>
+    <section id="about">
+      <h2 data-ar="عن المملكة" data-en="About the Kingdom">عن المملكة</h2>
+      <p data-ar="PeaceLand مشروع خيالي ورمزي يهدف إلى تمثيل السلام والمواطنة والتعاون بين الناس. جميع صفاته ومؤسساته رمزية ولا تمثل دولة معترفاً بها."
+         data-en="PeaceLand is a fictional, symbolic project representing peace, citizenship and cooperation. Its institutions are symbolic and it is not a recognized sovereign state.">
+        PeaceLand مشروع خيالي ورمزي يهدف إلى تمثيل السلام والمواطنة والتعاون بين الناس. جميع صفاته ومؤسساته رمزية ولا تمثل دولة معترفاً بها.
+      </p>
+    </section>
+
+    <section id="king">
+      <h2 data-ar="القيادة الملكية" data-en="Royal Leadership">القيادة الملكية</h2>
+      <h3 data-ar="جلالة الملك آدم الأول" data-en="His Majesty King Adam I">جلالة الملك آدم الأول</h3>
+      <p data-ar="ملك مملكة PeaceLand الرمزية." data-en="King of the symbolic Kingdom of PeaceLand.">ملك مملكة PeaceLand الرمزية.</p>
+      <h3 data-ar="السيد آدم رحّال" data-en="Sir Adam Rahal">السيد آدم رحّال</h3>
+      <p data-ar="نائب رئيس الوزراء." data-en="Deputy Prime Minister.">نائب رئيس الوزراء.</p>
+    </section>
+
+    <section id="cities">
+      <h2 data-ar="مدن المملكة الثماني" data-en="The Eight Cities">مدن المملكة الثماني</h2>
+      <div class="grid">
+        <div class="city"><h3>🏰 Royal Capital</h3><p data-ar="العاصمة الملكية والقصر والحكومة." data-en="Royal palace and government.">العاصمة الملكية والقصر والحكومة.</p></div>
+        <div class="city"><h3>🕊️ Peace City</h3><p data-ar="الوزارات والمؤسسات العامة." data-en="Ministries and public institutions.">الوزارات والمؤسسات العامة.</p></div>
+        <div class="city"><h3>💼 Golden City</h3><p data-ar="الأعمال والتجارة والاستثمار." data-en="Business, trade and investment.">الأعمال والتجارة والاستثمار.</p></div>
+        <div class="city"><h3>🎓 Knowledge City</h3><p data-ar="الجامعات والتعليم والبحث." data-en="Universities, education and research.">الجامعات والتعليم والبحث.</p></div>
+        <div class="city"><h3>⚓ Coastal City</h3><p data-ar="الميناء والسياحة والأنشطة البحرية." data-en="Port, tourism and maritime activities.">الميناء والسياحة والأنشطة البحرية.</p></div>
+        <div class="city"><h3>🌿 Green Valley</h3><p data-ar="الفلاحة والطبيعة والبيئة." data-en="Agriculture, nature and environment.">الفلاحة والطبيعة والبيئة.</p></div>
+        <div class="city"><h3>🏭 Industrial City</h3><p data-ar="الصناعة والتكنولوجيا والابتكار." data-en="Industry, technology and innovation.">الصناعة والتكنولوجيا والابتكار.</p></div>
+        <div class="city"><h3>🏛️ Heritage City</h3><p data-ar="التاريخ والمتاحف والثقافة." data-en="History, museums and culture.">التاريخ والمتاحف والثقافة.</p></div>
+      </div>
+    </section>
+
+    <section id="citizenship">
+      <h2 data-ar="طلب الجنسية الرمزية" data-en="Symbolic Citizenship Application">طلب الجنسية الرمزية</h2>
+      <p class="notice" data-ar="هذا نموذج تجريبي فقط. لن يتم إرسال طلبك أو حفظه في قاعدة بيانات في هذه المرحلة. لا تدخل معلومات حساسة."
+         data-en="This is a demonstration form only. Your application will not be sent or saved to a database yet. Do not enter sensitive information.">
+        هذا نموذج تجريبي فقط. لن يتم إرسال طلبك أو حفظه في قاعدة بيانات في هذه المرحلة. لا تدخل معلومات حساسة.
+      </p>
+
+      <form id="applicationForm">
+        <label for="appName" data-ar="الاسم الرمزي أو الاسم الأول" data-en="Display name or first name">الاسم الرمزي أو الاسم الأول</label>
+        <input id="appName" maxlength="60" required autocomplete="off">
+
+        <label for="appCity" data-ar="المدينة المفضلة" data-en="Preferred city">المدينة المفضلة</label>
+        <select id="appCity" required>
+          <option value="Royal Capital">Royal Capital</option>
+          <option value="Peace City">Peace City</option>
+          <option value="Golden City">Golden City</option>
+          <option value="Knowledge City">Knowledge City</option>
+          <option value="Coastal City">Coastal City</option>
+          <option value="Green Valley">Green Valley</option>
+          <option value="Industrial City">Industrial City</option>
+          <option value="Heritage City">Heritage City</option>
+        </select>
+
+        <label for="appReason" data-ar="لماذا تريد الانضمام؟ (اختياري)" data-en="Why would you like to join? (optional)">لماذا تريد الانضمام؟ (اختياري)</label>
+        <textarea id="appReason" maxlength="300" rows="3"></textarea>
+
+        <button class="button" type="submit" data-ar="تجربة إرسال الطلب" data-en="Test Application">تجربة إرسال الطلب</button>
+      </form>
+      <p id="formMessage" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kingdom of PeaceLand</p>
+    <p data-ar="مشروع خيالي رمزي — ليس دولة معترفاً بها." data-en="A fictional symbolic project — not a recognized sovereign state.">مشروع خيالي رمزي — ليس دولة معترفاً بها.</p>
+  </footer>
+
+  <script>
+    let currentLanguage = "ar";
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-ar][data-en]").forEach(element => {
+        element.textContent = element.dataset[language];
+      });
+
+      document.getElementById("royalSubtitle").textContent =
+        language === "ar"
+          ? "المملكة الرمزية للسلام والازدهار"
+          : "A symbolic kingdom of peace and prosperity";
+    }
+
+    document.getElementById("applicationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("formMessage").textContent =
+        currentLanguage === "ar"
+          ? "هذا نموذج تجريبي فقط: لم يتم حفظ الطلب أو إرساله."
+          : "Demo only: the application has not been saved or sent.";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
