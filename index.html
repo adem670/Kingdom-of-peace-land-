@@ -1,257 +1,1265 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kingdom of PeaceLand</title>
-  <style>
-    :root {
-      --green: #123b2c;
-      --gold: #d8b56d;
-      --cream: #f8f5eb;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b2c">
+<title>مملكة PeaceLand | Kingdom of PeaceLand</title>
 
-    * { box-sizing: border-box; }
+<style>
+:root {
+  --green: #123b2c;
+  --green2: #1d5940;
+  --gold: #d8b56d;
+  --cream: #f8f5eb;
+  --ink: #24352c;
+  --muted: #69776e;
+  --line: #e7dfcd;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--cream);
-      color: #24352c;
-      line-height: 1.8;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    header {
-      background: var(--green);
-      color: white;
-      text-align: center;
-      padding: 28px 16px;
-      border-bottom: 4px solid var(--gold);
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header h1 {
-      color: var(--gold);
-      margin: 0;
-    }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 15px;
-      background: #fff;
-    }
+button, input, select, textarea {
+  font: inherit;
+}
 
-    nav a {
-      color: var(--green);
-      text-decoration: none;
-      font-weight: bold;
-      padding: 7px 12px;
-    }
+.topbar {
+  background: #0b261c;
+  color: #f7f0df;
+  text-align: center;
+  padding: 8px 14px;
+  font-size: 14px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 65px 20px;
-      background: linear-gradient(135deg, #123b2c, #246448);
-      color: white;
-    }
+header {
+  background: linear-gradient(120deg, #0e3023, #1d5940);
+  color: white;
+  border-bottom: 4px solid var(--gold);
+  padding: 22px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    .hero h2 {
-      font-size: clamp(28px, 5vw, 44px);
-      color: var(--gold);
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-    .button {
-      display: inline-block;
-      background: var(--gold);
-      color: #183326;
-      padding: 10px 20px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 8px;
-      border: none;
-      cursor: pointer;
-    }
+.crest {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+}
 
-    main {
-      max-width: 1050px;
-      margin: auto;
-      padding: 20px;
-    }
+.brand h1 {
+  margin: 0;
+  color: var(--gold);
+  font-size: clamp(22px, 4vw, 32px);
+}
 
-    section {
-      background: white;
-      padding: 25px;
-      margin: 22px 0;
-      border-radius: 12px;
-      border: 1px solid #e8dfc9;
-    }
+.brand p {
+  margin: 0;
+}
 
-    h2, h3 { color: var(--green); }
+button, .btn {
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #173627;
+  border-radius: 8px;
+  padding: 9px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 15px;
-    }
+button:hover, .btn:hover {
+  opacity: .85;
+}
 
-    .city {
-      padding: 18px;
-      background: #f5f3e9;
-      border-right: 4px solid var(--gold);
-      border-radius: 8px;
-    }
+.language button {
+  margin: 3px;
+}
 
-    label { display: block; margin-top: 12px; }
+nav {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: white;
+  padding: 10px 3%;
+  box-shadow: 0 3px 12px #00000008;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 5px;
-      border: 1px solid #bbb;
-      border-radius: 6px;
-      font: inherit;
-    }
+nav a {
+  text-decoration: none;
+  color: var(--green);
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 7px;
+}
 
-    footer {
-      text-align: center;
-      background: var(--green);
-      color: white;
-      padding: 25px;
-      margin-top: 35px;
-    }
+nav a:hover {
+  background: #f5eedc;
+}
 
-    .notice {
-      background: #fff8df;
-      padding: 12px;
-      border-radius: 7px;
-    }
+.hero {
+  background:
+    linear-gradient(90deg, #0d2d21ed, #123b2cce),
+    url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+}
 
-    [hidden] { display: none !important; }
-  </style>
+.hero h2 {
+  font-size: clamp(30px, 5vw, 55px);
+  color: var(--gold);
+  line-height: 1.3;
+  margin: 12px auto;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 0 auto 22px;
+  font-size: 18px;
+}
+
+.hero .btn {
+  margin: 5px;
+}
+
+.wrap {
+  width: min(1160px, 92%);
+  margin: auto;
+}
+
+.section {
+  padding: 45px 0;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.section-head h2 {
+  color: var(--green);
+  font-size: 30px;
+  margin: 0;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin: 6px auto;
+  max-width: 750px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: -25px;
+  position: relative;
+}
+
+.stat {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  color: var(--green);
+  font-size: 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px #102c2010;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  background: #e8e2d4;
+}
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  color: var(--green);
+  font-size: 19px;
+}
+
+.card p {
+  color: #56645b;
+  flex: 1;
+}
+
+.tag {
+  display: inline-block;
+  color: #6a5121;
+  background: #f8efda;
+  border-radius: 30px;
+  padding: 3px 10px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  width: max-content;
+}
+
+.panel {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.portal {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  text-decoration: none;
+}
+
+.portal b {
+  display: block;
+  color: var(--green);
+  font-size: 18px;
+}
+
+.portal span {
+  color: var(--muted);
+}
+
+.notice {
+  background: #fff8df;
+  border-right: 4px solid var(--gold);
+  padding: 13px 16px;
+  border-radius: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: var(--green);
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #cfc9ba;
+  border-radius: 8px;
+  padding: 11px;
+  background: white;
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.status {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.status.ok {
+  color: #17643d;
+}
+
+.status.err {
+  color: #a42c2c;
+}
+
+.constitution {
+  background: linear-gradient(120deg, #123b2c, #1d5940);
+  color: white;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.constitution h3 {
+  color: var(--gold);
+}
+
+footer {
+  background: #0b261c;
+  color: #eee8d9;
+  margin-top: 40px;
+  padding: 30px 4%;
+  text-align: center;
+  border-top: 4px solid var(--gold);
+}
+
+footer a {
+  color: var(--gold);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #08170fd9;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 30;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-box {
+  background: var(--cream);
+  width: min(780px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 15px;
+}
+
+.modal-box img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.modal-content {
+  padding: 22px;
+}
+
+.close {
+  background: var(--green);
+  color: white;
+}
+
+@media(max-width: 650px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  nav {
+    position: static;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>👑 Kingdom of PeaceLand</h1>
-    <p id="royalSubtitle">المملكة الرمزية للسلام والازدهار</p>
-    <button class="button" onclick="setLanguage('ar')">العربية</button>
-    <button class="button" onclick="setLanguage('en')">English</button>
-  </header>
 
-  <nav>
-    <a href="#about" data-ar="عن المملكة" data-en="About">عن المملكة</a>
-    <a href="#king" data-ar="الملك" data-en="The King">الملك</a>
-    <a href="#cities" data-ar="المدن" data-en="Cities">المدن</a>
-    <a href="#citizenship" data-ar="طلب الجنسية" data-en="Citizenship">طلب الجنسية</a>
-  </nav>
+<div class="topbar"
+ data-ar="مشروع رمزي خيالي للتعاون والمواطنة — ليس دولة معترفًا بها"
+ data-en="A fictional symbolic project — not a recognized state">
+مشروع رمزي خيالي للتعاون والمواطنة — ليس دولة معترفًا بها
+</div>
 
-  <div class="hero">
-    <h2 data-ar="أهلاً بكم في مملكة السلام" data-en="Welcome to the Kingdom of Peace">أهلاً بكم في مملكة السلام</h2>
-    <p data-ar="وطن رمزي يجمع السلام والعدل والمعرفة والتعاون." data-en="A symbolic kingdom built on peace, justice, knowledge and cooperation.">
-      وطن رمزي يجمع السلام والعدل والمعرفة والتعاون.
-    </p>
-    <a class="button" href="#cities" data-ar="اكتشف المملكة" data-en="Explore the Kingdom">اكتشف المملكة</a>
-    <a class="button" href="#citizenship" data-ar="طلب الجنسية الرمزية" data-en="Apply for Symbolic Citizenship">طلب الجنسية الرمزية</a>
+<header>
+  <div class="brand">
+    <div class="crest">👑</div>
+    <div>
+      <h1>Kingdom of PeaceLand</h1>
+      <p id="subtitle">المملكة الرمزية للسلام والازدهار</p>
+    </div>
   </div>
 
-  <main>
-    <section id="about">
+  <div class="language">
+    <button onclick="setLanguage('ar')">العربية</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
+</header>
+
+<nav>
+  <a href="#about" data-ar="عن المملكة" data-en="About">عن المملكة</a>
+  <a href="#king" data-ar="القيادة الملكية" data-en="Royal Leadership">القيادة الملكية</a>
+  <a href="#ministries" data-ar="الوزارات" data-en="Ministries">الوزارات</a>
+  <a href="#cities" data-ar="المدن" data-en="Cities">المدن</a>
+  <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
+  <a href="#request" data-ar="إرسال طلب" data-en="Submit a Request">إرسال طلب</a>
+</nav>
+
+<section class="hero">
+  <div data-ar="السلام • العدل • المعرفة • التعاون"
+       data-en="PEACE • JUSTICE • KNOWLEDGE • COOPERATION">
+    السلام • العدل • المعرفة • التعاون
+  </div>
+
+  <h2 data-ar="أهلاً بكم في مملكة السلام"
+      data-en="Welcome to the Kingdom of Peace">
+    أهلاً بكم في مملكة السلام
+  </h2>
+
+  <p data-ar="اكتشفوا مؤسسات المملكة ومدنها، تعرّفوا على مهام الوزارات، وقدّموا طلبًا رمزيًا عبر بوابة موحّدة."
+     data-en="Explore the Kingdom's institutions and cities, learn about ministries, and submit a symbolic request.">
+    اكتشفوا مؤسسات المملكة ومدنها، تعرّفوا على مهام الوزارات، وقدّموا طلبًا رمزيًا عبر بوابة موحّدة.
+  </p>
+
+  <a class="btn" href="#ministries"
+     data-ar="اكتشف الوزارات" data-en="Explore Ministries">
+    اكتشف الوزارات
+  </a>
+
+  <a class="btn" href="#cities"
+     data-ar="اكتشف المدن" data-en="Explore Cities">
+    اكتشف المدن
+  </a>
+</section>
+
+<main class="wrap">
+
+  <div class="stats">
+    <div class="stat">
+      <strong>15</strong>
+      <span data-ar="وزارة" data-en="Ministries">وزارة</span>
+    </div>
+
+    <div class="stat">
+      <strong>8</strong>
+      <span data-ar="مدن رمزية" data-en="Symbolic Cities">مدن رمزية</span>
+    </div>
+
+    <div class="stat">
+      <strong>2</strong>
+      <span data-ar="لغتان" data-en="Languages">لغتان</span>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="section-head">
       <h2 data-ar="عن المملكة" data-en="About the Kingdom">عن المملكة</h2>
-      <p data-ar="PeaceLand مشروع خيالي ورمزي يهدف إلى تمثيل السلام والمواطنة والتعاون بين الناس. جميع صفاته ومؤسساته رمزية ولا تمثل دولة معترفاً بها."
-         data-en="PeaceLand is a fictional, symbolic project representing peace, citizenship and cooperation. Its institutions are symbolic and it is not a recognized sovereign state.">
-        PeaceLand مشروع خيالي ورمزي يهدف إلى تمثيل السلام والمواطنة والتعاون بين الناس. جميع صفاته ومؤسساته رمزية ولا تمثل دولة معترفاً بها.
+      <p data-ar="PeaceLand مشروع خيالي ورمزي يهدف إلى تمثيل السلام والمواطنة والتعاون بين الناس."
+         data-en="PeaceLand is a fictional symbolic project representing peace, citizenship and cooperation.">
+        PeaceLand مشروع خيالي ورمزي يهدف إلى تمثيل السلام والمواطنة والتعاون بين الناس.
       </p>
-    </section>
+    </div>
 
-    <section id="king">
+    <div class="constitution">
+      <h3 data-ar="دستور مملكة أرض السلام"
+          data-en="Constitution of the Kingdom of PeaceLand">
+        دستور مملكة أرض السلام
+      </h3>
+
+      <p data-ar="يمكن الاطلاع على القرارات والمنشورات المنشورة عبر بوابة القرارات."
+         data-en="Browse published decisions and notices through the decisions portal.">
+        يمكن الاطلاع على القرارات والمنشورات المنشورة عبر بوابة القرارات.
+      </p>
+
+      <a class="btn"
+         href="https://adem670.github.io/Kingdom-decisions/"
+         target="_blank" rel="noopener"
+         data-ar="الجريدة والقرارات" data-en="Gazette & Decisions">
+        الجريدة والقرارات
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="king">
+    <div class="section-head">
       <h2 data-ar="القيادة الملكية" data-en="Royal Leadership">القيادة الملكية</h2>
-      <h3 data-ar="جلالة الملك آدم الأول" data-en="His Majesty King Adam I">جلالة الملك آدم الأول</h3>
-      <p data-ar="ملك مملكة PeaceLand الرمزية." data-en="King of the symbolic Kingdom of PeaceLand.">ملك مملكة PeaceLand الرمزية.</p>
-      <h3 data-ar="السيد آدم رحّال" data-en="Sir Adam Rahal">السيد آدم رحّال</h3>
-      <p data-ar="نائب رئيس الوزراء." data-en="Deputy Prime Minister.">نائب رئيس الوزراء.</p>
-    </section>
+    </div>
 
-    <section id="cities">
-      <h2 data-ar="مدن المملكة الثماني" data-en="The Eight Cities">مدن المملكة الثماني</h2>
-      <div class="grid">
-        <div class="city"><h3>🏰 Royal Capital</h3><p data-ar="العاصمة الملكية والقصر والحكومة." data-en="Royal palace and government.">العاصمة الملكية والقصر والحكومة.</p></div>
-        <div class="city"><h3>🕊️ Peace City</h3><p data-ar="الوزارات والمؤسسات العامة." data-en="Ministries and public institutions.">الوزارات والمؤسسات العامة.</p></div>
-        <div class="city"><h3>💼 Golden City</h3><p data-ar="الأعمال والتجارة والاستثمار." data-en="Business, trade and investment.">الأعمال والتجارة والاستثمار.</p></div>
-        <div class="city"><h3>🎓 Knowledge City</h3><p data-ar="الجامعات والتعليم والبحث." data-en="Universities, education and research.">الجامعات والتعليم والبحث.</p></div>
-        <div class="city"><h3>⚓ Coastal City</h3><p data-ar="الميناء والسياحة والأنشطة البحرية." data-en="Port, tourism and maritime activities.">الميناء والسياحة والأنشطة البحرية.</p></div>
-        <div class="city"><h3>🌿 Green Valley</h3><p data-ar="الفلاحة والطبيعة والبيئة." data-en="Agriculture, nature and environment.">الفلاحة والطبيعة والبيئة.</p></div>
-        <div class="city"><h3>🏭 Industrial City</h3><p data-ar="الصناعة والتكنولوجيا والابتكار." data-en="Industry, technology and innovation.">الصناعة والتكنولوجيا والابتكار.</p></div>
-        <div class="city"><h3>🏛️ Heritage City</h3><p data-ar="التاريخ والمتاحف والثقافة." data-en="History, museums and culture.">التاريخ والمتاحف والثقافة.</p></div>
-      </div>
-    </section>
-
-    <section id="citizenship">
-      <h2 data-ar="طلب الجنسية الرمزية" data-en="Symbolic Citizenship Application">طلب الجنسية الرمزية</h2>
-      <p class="notice" data-ar="هذا نموذج تجريبي فقط. لن يتم إرسال طلبك أو حفظه في قاعدة بيانات في هذه المرحلة. لا تدخل معلومات حساسة."
-         data-en="This is a demonstration form only. Your application will not be sent or saved to a database yet. Do not enter sensitive information.">
-        هذا نموذج تجريبي فقط. لن يتم إرسال طلبك أو حفظه في قاعدة بيانات في هذه المرحلة. لا تدخل معلومات حساسة.
+    <div class="panel">
+      <h3 data-ar="جلالة الملك آدم الأول"
+          data-en="His Majesty King Adam I">
+        جلالة الملك آدم الأول
+      </h3>
+      <p data-ar="ملك مملكة PeaceLand الرمزية."
+         data-en="King of the symbolic Kingdom of PeaceLand.">
+        ملك مملكة PeaceLand الرمزية.
       </p>
 
-      <form id="applicationForm">
-        <label for="appName" data-ar="الاسم الرمزي أو الاسم الأول" data-en="Display name or first name">الاسم الرمزي أو الاسم الأول</label>
-        <input id="appName" maxlength="60" required autocomplete="off">
+      <h3 data-ar="السيد آدم رحّال" data-en="Sir Adam Rahal">
+        السيد آدم رحّال
+      </h3>
+      <p data-ar="نائب رئيس الوزراء."
+         data-en="Deputy Prime Minister.">
+        نائب رئيس الوزراء.
+      </p>
+    </div>
+  </section>
 
-        <label for="appCity" data-ar="المدينة المفضلة" data-en="Preferred city">المدينة المفضلة</label>
-        <select id="appCity" required>
-          <option value="Royal Capital">Royal Capital</option>
-          <option value="Peace City">Peace City</option>
-          <option value="Golden City">Golden City</option>
-          <option value="Knowledge City">Knowledge City</option>
-          <option value="Coastal City">Coastal City</option>
-          <option value="Green Valley">Green Valley</option>
-          <option value="Industrial City">Industrial City</option>
-          <option value="Heritage City">Heritage City</option>
-        </select>
+  <section class="section" id="ministries">
+    <div class="section-head">
+      <h2 data-ar="وزارات المملكة" data-en="Kingdom Ministries">وزارات المملكة</h2>
+      <p data-ar="اضغط على أي وزارة لقراءة مهامها وفتح نموذج إرسال طلب موجه إليها."
+         data-en="Select a ministry to learn about its responsibilities and submit a request.">
+        اضغط على أي وزارة لقراءة مهامها وفتح نموذج إرسال طلب موجه إليها.
+      </p>
+    </div>
 
-        <label for="appReason" data-ar="لماذا تريد الانضمام؟ (اختياري)" data-en="Why would you like to join? (optional)">لماذا تريد الانضمام؟ (اختياري)</label>
-        <textarea id="appReason" maxlength="300" rows="3"></textarea>
+    <div class="cards" id="ministryCards"></div>
+  </section>
 
-        <button class="button" type="submit" data-ar="تجربة إرسال الطلب" data-en="Test Application">تجربة إرسال الطلب</button>
+  <section class="section" id="cities">
+    <div class="section-head">
+      <h2 data-ar="مدن المملكة الثماني" data-en="The Eight Cities">مدن المملكة الثماني</h2>
+      <p data-ar="اضغط على أي مدينة للاطلاع على معلوماتها."
+         data-en="Select a city to learn more about it.">
+        اضغط على أي مدينة للاطلاع على معلوماتها.
+      </p>
+    </div>
+
+    <div class="cards" id="cityCards"></div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-head">
+      <h2 data-ar="المؤسسات والخدمات" data-en="Institutions & Services">المؤسسات والخدمات</h2>
+    </div>
+
+    <div class="portal-grid">
+      <a class="portal" href="https://adem670.github.io/Kingdom-citizen-portal/" target="_blank" rel="noopener">
+        <b>👥 بوابة المواطن</b>
+        <span data-ar="الخدمات والمطالب الرمزية."
+              data-en="Symbolic services and applications.">
+          الخدمات والمطالب الرمزية.
+        </span>
+      </a>
+
+      <a class="portal" href="https://adem670.github.io/Kingdom-admin/" target="_blank" rel="noopener">
+        <b>🏛️ الإدارة الملكية</b>
+        <span data-ar="فضاء الإدارة الملكية."
+              data-en="Royal administration area.">
+          فضاء الإدارة الملكية.
+        </span>
+      </a>
+
+      <a class="portal" href="https://adem670.github.io/Kingdom-decisions/" target="_blank" rel="noopener">
+        <b>📜 الجريدة الرسمية</b>
+        <span data-ar="القرارات والمنشورات."
+              data-en="Decisions and publications.">
+          القرارات والمنشورات.
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="request">
+    <div class="section-head">
+      <h2 data-ar="إرسال طلب إلى المملكة"
+          data-en="Submit a Request to the Kingdom">
+        إرسال طلب إلى المملكة
+      </h2>
+      <p data-ar="اختر الوزارة أو المدينة واكتب اسمك وموضوع الطلب."
+         data-en="Choose a ministry or city and enter your name and request details.">
+        اختر الوزارة أو المدينة واكتب اسمك وموضوع الطلب.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="notice"
+           data-ar="استعمل اسمًا أولًا أو اسمًا رمزيًا فقط. لا ترسل كلمات مرور أو أرقام هوية أو معلومات حساسة."
+           data-en="Use a first name or display name only. Do not submit passwords, identity numbers or sensitive information.">
+        استعمل اسمًا أولًا أو اسمًا رمزيًا فقط. لا ترسل كلمات مرور أو أرقام هوية أو معلومات حساسة.
+      </div>
+
+      <form id="requestForm" style="margin-top:18px">
+        <div class="form-grid">
+          <div class="field">
+            <label for="applicantName">الاسم أو الاسم الرمزي *</label>
+            <input id="applicantName" maxlength="80" required>
+          </div>
+
+          <div class="field">
+            <label for="applicantEmail">البريد الإلكتروني (اختياري)</label>
+            <input id="applicantEmail" type="email" maxlength="120">
+          </div>
+
+          <div class="field">
+            <label for="targetType">نوع الجهة *</label>
+            <select id="targetType" required>
+              <option value="ministry">وزارة</option>
+              <option value="city">مدينة</option>
+              <option value="general">طلب عام</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="targetName">الوزارة أو المدينة *</label>
+            <select id="targetName" required></select>
+          </div>
+
+          <div class="field full">
+            <label for="requestDetails">تفاصيل الطلب *</label>
+            <textarea id="requestDetails" maxlength="2000" required></textarea>
+          </div>
+        </div>
+
+        <button class="btn" type="submit" id="submitBtn">إرسال الطلب</button>
+        <p id="requestStatus" class="status" role="status" aria-live="polite"></p>
       </form>
-      <p id="formMessage" role="status"></p>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <p>© <span id="year"></span> Kingdom of PeaceLand</p>
-    <p data-ar="مشروع خيالي رمزي — ليس دولة معترفاً بها." data-en="A fictional symbolic project — not a recognized sovereign state.">مشروع خيالي رمزي — ليس دولة معترفاً بها.</p>
-  </footer>
+</main>
 
-  <script>
-    let currentLanguage = "ar";
+<footer>
+  <strong>👑 Kingdom of PeaceLand</strong>
+  <p>مشروع خيالي رمزي — ليس دولة معترفًا بها.</p>
+  <p>© <span id="year"></span> PeaceLand</p>
+</footer>
 
-    function setLanguage(language) {
-      currentLanguage = language;
-      document.documentElement.lang = language;
-      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+<div class="modal" id="infoModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <img id="modalImage" alt="">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">إغلاق ✕</button>
+      <h2 id="modalTitle"></h2>
+      <div id="modalText"></div>
+      <button class="btn" onclick="requestFromModal()">إرسال طلب لهذه الجهة</button>
+    </div>
+  </div>
+</div>
 
-      document.querySelectorAll("[data-ar][data-en]").forEach(element => {
-        element.textContent = element.dataset[language];
-      });
+<!-- الجزء الثاني سيحتوي على بيانات الوزارات والمدن ووظائف الموقع -->
+<script>
+/* =========================
+   إعداد قاعدة البيانات
+========================= */
 
-      document.getElementById("royalSubtitle").textContent =
-        language === "ar"
-          ? "المملكة الرمزية للسلام والازدهار"
-          : "A symbolic kingdom of peace and prosperity";
+const SUPABASE_URL =
+  "https://gfjlglniyaerdcjgefgi.supabase.co";
+
+const SUPABASE_KEY =
+  "sb_publishable_UTEgMhPFF34jjCIeX39Nhg_8Tf_cWiX";
+
+let lang = "ar";
+let selectedDestination = {
+  type: "general",
+  name: "طلب عام"
+};
+
+/* =========================
+   الوزارات الـ15
+========================= */
+
+const ministries = [
+  {
+    ar: "وزارة الداخلية",
+    en: "Ministry of Interior",
+    icon: "🛡️",
+    descAr: "الشؤون الداخلية والتنسيق الإداري والخدمات المحلية.",
+    descEn: "Internal affairs, administrative coordination and local services."
+  },
+  {
+    ar: "وزارة الخارجية والتعاون الدولي",
+    en: "Ministry of Foreign Affairs and International Cooperation",
+    icon: "🌐",
+    descAr: "العلاقات الخارجية والتعاون الدولي والبروتوكول.",
+    descEn: "Foreign relations, international cooperation and protocol."
+  },
+  {
+    ar: "وزارة العدل",
+    en: "Ministry of Justice",
+    icon: "⚖️",
+    descAr: "التوعية القانونية وتعزيز مبادئ العدالة.",
+    descEn: "Legal awareness and promotion of justice."
+  },
+  {
+    ar: "وزارة الدفاع والحماية المدنية",
+    en: "Ministry of Defence and Civil Protection",
+    icon: "🕊️",
+    descAr: "الاستعداد المدني والتوعية بالسلامة وحماية المجتمع.",
+    descEn: "Civil preparedness, safety awareness and community protection."
+  },
+  {
+    ar: "وزارة المالية",
+    en: "Ministry of Finance",
+    icon: "💰",
+    descAr: "الميزانية والتخطيط المالي والشفافية.",
+    descEn: "Budgeting, financial planning and transparency."
+  },
+  {
+    ar: "وزارة الاقتصاد والاستثمار",
+    en: "Ministry of Economy and Investment",
+    icon: "📈",
+    descAr: "التجارة وريادة الأعمال والمبادرات الاقتصادية.",
+    descEn: "Trade, entrepreneurship and economic initiatives."
+  },
+  {
+    ar: "وزارة التربية والتعليم",
+    en: "Ministry of Education",
+    icon: "📚",
+    descAr: "التعليم المدرسي والموارد التعليمية.",
+    descEn: "School education and educational resources."
+  },
+  {
+    ar: "وزارة التعليم العالي والبحث العلمي",
+    en: "Ministry of Higher Education and Scientific Research",
+    icon: "🎓",
+    descAr: "الجامعات والبحث العلمي والابتكار الأكاديمي.",
+    descEn: "Universities, scientific research and academic innovation."
+  },
+  {
+    ar: "وزارة الصحة",
+    en: "Ministry of Health",
+    icon: "➕",
+    descAr: "التوعية الصحية والوقاية والصحة العامة.",
+    descEn: "Health awareness, prevention and public health."
+  },
+  {
+    ar: "وزارة الشؤون الاجتماعية",
+    en: "Ministry of Social Affairs",
+    icon: "🤝",
+    descAr: "التضامن الاجتماعي والإدماج والتطوع.",
+    descEn: "Social solidarity, inclusion and volunteering."
+  },
+  {
+    ar: "وزارة التشغيل وتنمية المهارات",
+    en: "Ministry of Employment and Skills Development",
+    icon: "🧰",
+    descAr: "التدريب والتوجيه المهني وتنمية المهارات.",
+    descEn: "Training, career guidance and skills development."
+  },
+  {
+    ar: "وزارة الفلاحة والموارد المائية",
+    en: "Ministry of Agriculture and Water Resources",
+    icon: "🌾",
+    descAr: "الفلاحة المستدامة وحماية المياه والأمن الغذائي.",
+    descEn: "Sustainable agriculture, water protection and food security."
+  },
+  {
+    ar: "وزارة البيئة والطاقة المستدامة",
+    en: "Ministry of Environment and Sustainable Energy",
+    icon: "🌿",
+    descAr: "حماية البيئة والاستدامة والطاقة النظيفة.",
+    descEn: "Environmental protection, sustainability and clean energy."
+  },
+  {
+    ar: "وزارة النقل والبنية التحتية",
+    en: "Ministry of Transport and Infrastructure",
+    icon: "🚆",
+    descAr: "النقل والطرقات والبنية التحتية والربط بين المدن.",
+    descEn: "Transport, roads, infrastructure and intercity connections."
+  },
+  {
+    ar: "وزارة الثقافة والسياحة والرياضة",
+    en: "Ministry of Culture, Tourism and Sport",
+    icon: "🎭",
+    descAr: "الثقافة والتراث والسياحة والرياضة.",
+    descEn: "Culture, heritage, tourism and sport."
+  }
+];
+
+/* =========================
+   المدن الثماني
+========================= */
+
+const cities = [
+  {
+    ar: "العاصمة الملكية",
+    en: "Royal Capital",
+    icon: "🏰",
+    descAr: "دار السلام، العاصمة الرمزية ومقر المؤسسات المركزية.",
+    descEn: "Dar al-Salam, the symbolic capital and home of central institutions.",
+    image: "photo-1511818966892-d7d671e672a2"
+  },
+  {
+    ar: "مدينة السلام",
+    en: "Peace City",
+    icon: "🕊️",
+    descAr: "مركز التعاون المجتمعي والخدمات العامة.",
+    descEn: "A centre for community cooperation and public services.",
+    image: "photo-1480714378408-67cf0d13bc1b"
+  },
+  {
+    ar: "المدينة الذهبية",
+    en: "Golden City",
+    icon: "💼",
+    descAr: "مركز الأعمال والتجارة والاستثمار.",
+    descEn: "A centre for business, trade and investment.",
+    image: "photo-1486406146926-c627a92ad1ab"
+  },
+  {
+    ar: "مدينة المعرفة",
+    en: "Knowledge City",
+    icon: "🎓",
+    descAr: "مدينة الجامعات والمكتبات والبحث العلمي.",
+    descEn: "A city of universities, libraries and scientific research.",
+    image: "photo-1562774053-701939374585"
+  },
+  {
+    ar: "المدينة الساحلية",
+    en: "Coastal City",
+    icon: "⚓",
+    descAr: "مدينة الأنشطة البحرية والسياحة الساحلية.",
+    descEn: "A city focused on maritime activities and coastal tourism.",
+    image: "photo-1500375592092-40eb2168fd21"
+  },
+  {
+    ar: "الوادي الأخضر",
+    en: "Green Valley",
+    icon: "🌿",
+    descAr: "منطقة الطبيعة والفلاحة والمشاريع البيئية.",
+    descEn: "A region of nature, agriculture and environmental projects.",
+    image: "photo-1472396961693-142e6e269027"
+  },
+  {
+    ar: "المدينة الصناعية",
+    en: "Industrial City",
+    icon: "🏭",
+    descAr: "مركز الصناعة والتكنولوجيا والمشاريع الإنتاجية.",
+    descEn: "A centre for industry, technology and production.",
+    image: "photo-1567789884554-0b844b597180"
+  },
+  {
+    ar: "مدينة التراث",
+    en: "Heritage City",
+    icon: "🏛️",
+    descAr: "مدينة التاريخ والمتاحف والفنون والتراث.",
+    descEn: "A city of history, museums, arts and heritage.",
+    image: "photo-1511818966892-d7d671e672a2"
+  }
+];
+
+/* =========================
+   أدوات مساعدة
+========================= */
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function translated(ar, en) {
+  return lang === "ar" ? ar : en;
+}
+
+function imageURL(photo) {
+  return "https://images.unsplash.com/" +
+    photo +
+    "?auto=format&fit=crop&w=900&q=80";
+}
+
+/* =========================
+   عرض الوزارات
+========================= */
+
+function renderMinistries() {
+  const container = document.getElementById("ministryCards");
+
+  container.innerHTML = ministries.map((ministry, index) => `
+    <article class="card">
+      <div class="card-body">
+        <span class="tag">
+          ${translated("وزارة رقم " + (index + 1),
+                       "Ministry " + (index + 1))}
+        </span>
+
+        <div style="font-size:30px">${ministry.icon}</div>
+
+        <h3>${escapeHTML(translated(ministry.ar, ministry.en))}</h3>
+
+        <p>${escapeHTML(translated(
+          ministry.descAr,
+          ministry.descEn
+        ))}</p>
+
+        <button class="btn"
+          onclick="showMinistry(${index})">
+          ${translated("التفاصيل وتقديم طلب", "Details and Request")}
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
+
+/* =========================
+   عرض المدن
+========================= */
+
+function renderCities() {
+  const container = document.getElementById("cityCards");
+
+  container.innerHTML = cities.map((city, index) => `
+    <article class="card">
+      <img
+        src="${imageURL(city.image)}"
+        alt="${escapeHTML(translated(city.ar, city.en))}"
+        loading="lazy"
+      >
+
+      <div class="card-body">
+        <h3>${escapeHTML(translated(city.ar, city.en))}</h3>
+
+        <p>${escapeHTML(translated(city.descAr, city.descEn))}</p>
+
+        <button class="btn" onclick="showCity(${index})">
+          ${translated("اكتشف المدينة", "Explore City")}
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
+
+/* =========================
+   نافذة المعلومات
+========================= */
+
+function openModal(title, description, image, type, name) {
+  selectedDestination = { type, name };
+
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalText").textContent = description;
+
+  const modalImage = document.getElementById("modalImage");
+
+  if (image) {
+    modalImage.src = image;
+    modalImage.alt = title;
+    modalImage.hidden = false;
+  } else {
+    modalImage.hidden = true;
+  }
+
+  document.getElementById("infoModal").classList.add("open");
+}
+
+function showMinistry(index) {
+  const m = ministries[index];
+
+  openModal(
+    translated(m.ar, m.en),
+    translated(m.descAr, m.descEn),
+    "",
+    "ministry",
+    m.ar
+  );
+}
+
+function showCity(index) {
+  const c = cities[index];
+
+  openModal(
+    translated(c.ar, c.en),
+    translated(c.descAr, c.descEn),
+    imageURL(c.image),
+    "city",
+    c.ar
+  );
+}
+
+function closeModal() {
+  document.getElementById("infoModal").classList.remove("open");
+}
+
+function requestFromModal() {
+  const typeSelect = document.getElementById("targetType");
+
+  typeSelect.value = selectedDestination.type;
+
+  populateDestinationOptions();
+
+  document.getElementById("targetName").value =
+    selectedDestination.name;
+
+  closeModal();
+
+  document.getElementById("request").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+/* =========================
+   نموذج الطلبات
+========================= */
+
+function populateDestinationOptions() {
+  const type = document.getElementById("targetType").value;
+  const select = document.getElementById("targetName");
+
+  let options = [];
+
+  if (type === "ministry") {
+    options = ministries.map(m => ({
+      value: m.ar,
+      label: translated(m.ar, m.en)
+    }));
+  } else if (type === "city") {
+    options = cities.map(c => ({
+      value: c.ar,
+      label: translated(c.ar, c.en)
+    }));
+  } else {
+    options = [{
+      value: "طلب عام",
+      label: translated("طلب عام", "General Request")
+    }];
+  }
+
+  select.innerHTML = options.map(option => `
+    <option value="${escapeHTML(option.value)}">
+      ${escapeHTML(option.label)}
+    </option>
+  `).join("");
+}
+
+document.getElementById("targetType")
+  .addEventListener("change", populateDestinationOptions);
+
+/* =========================
+   إرسال الطلب إلى Supabase
+========================= */
+
+function makeReferenceNumber() {
+  const randomPart = Math.random().toString(36)
+    .slice(2, 8).toUpperCase();
+
+  return "PL-" + new Date().getFullYear() + "-" + randomPart;
+}
+
+document.getElementById("requestForm")
+  .addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const button = document.getElementById("submitBtn");
+    const status = document.getElementById("requestStatus");
+
+    status.className = "status";
+    status.textContent = translated(
+      "جارٍ إرسال الطلب...",
+      "Submitting your request..."
+    );
+
+    button.disabled = true;
+
+    const name = document.getElementById("applicantName")
+      .value.trim();
+
+    const email = document.getElementById("applicantEmail")
+      .value.trim();
+
+    const type = document.getElementById("targetType").value;
+
+    const destination = document.getElementById("targetName").value;
+
+    const details = document.getElementById("requestDetails")
+      .value.trim();
+
+    if (!name || !destination || !details) {
+      status.className = "status err";
+      status.textContent = translated(
+        "يرجى تعمير الخانات المطلوبة.",
+        "Please complete the required fields."
+      );
+      button.disabled = false;
+      return;
     }
 
-    document.getElementById("applicationForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      document.getElementById("formMessage").textContent =
-        currentLanguage === "ar"
-          ? "هذا نموذج تجريبي فقط: لم يتم حفظ الطلب أو إرساله."
-          : "Demo only: the application has not been saved or sent.";
+    const reference = makeReferenceNumber();
+
+    const payload = {
+      reference_number: reference,
+      applicant_name: name,
+      email: email || null,
+      city: type === "city" ? destination : null,
+      application_type: type === "ministry"
+        ? "طلب إلى " + destination
+        : type === "city"
+          ? "طلب متعلق بمدينة " + destination
+          : "طلب عام",
+      details: details,
+      status: "pending"
+    };
+
+    try {
+      const response = await fetch(
+        SUPABASE_URL + "/rest/v1/citizen_applications",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_KEY,
+            "Authorization": "Bearer " + SUPABASE_KEY,
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Supabase error:", errorText);
+        throw new Error("REQUEST_FAILED");
+      }
+
+      status.className = "status ok";
+      status.textContent = translated(
+        "تم إرسال الطلب بنجاح. الرقم المرجعي: ",
+        "Request submitted successfully. Reference: "
+      ) + reference;
+
+      document.getElementById("requestForm").reset();
+      populateDestinationOptions();
+
+    } catch (error) {
+      status.className = "status err";
+      status.textContent = translated(
+        "تعذّر إرسال الطلب. قد تكون صلاحيات قاعدة البيانات غير مضبوطة. تأكد من إعداد Supabase ثم حاول مجددًا.",
+        "The request could not be submitted. Check your Supabase database permissions and try again."
+      );
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+/* =========================
+   تغيير اللغة
+========================= */
+
+function setLanguage(language) {
+  lang = language;
+
+  document.documentElement.lang = language;
+  document.documentElement.dir =
+    language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-ar][data-en]")
+    .forEach(element => {
+      element.textContent =
+        language === "ar"
+          ? element.dataset.ar
+          : element.dataset.en;
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById("subtitle").textContent =
+    translated(
+      "المملكة الرمزية للسلام والازدهار",
+      "A Symbolic Kingdom of Peace and Prosperity"
+    );
+
+  document.getElementById("applicantName").previousElementSibling
+    .textContent = translated(
+      "الاسم أو الاسم الرمزي *",
+      "Name or display name *"
+    );
+
+  document.getElementById("applicantEmail").previousElementSibling
+    .textContent = translated(
+      "البريد الإلكتروني (اختياري)",
+      "Email (optional)"
+    );
+
+  document.querySelector('label[for="targetType"]').textContent =
+    translated("نوع الجهة *", "Destination type *");
+
+  document.querySelector('label[for="targetName"]').textContent =
+    translated("الوزارة أو المدينة *", "Ministry or city *");
+
+  document.querySelector('label[for="requestDetails"]').textContent =
+    translated("تفاصيل الطلب *", "Request details *");
+
+  document.getElementById("submitBtn").textContent =
+    translated("إرسال الطلب", "Submit Request");
+
+  renderMinistries();
+  renderCities();
+  populateDestinationOptions();
+}
+
+/* =========================
+   تشغيل الموقع
+========================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+renderMinistries();
+renderCities();
+populateDestinationOptions();
+</script>
+
 </body>
 </html>
